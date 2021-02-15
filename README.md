@@ -1,4 +1,4 @@
-# medicoach
+# mtrainer
 
 A new Flutter project.
 
