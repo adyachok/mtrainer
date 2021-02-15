@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 class InputField {
   String helperText;
   String labelText;
+  Function(String) onSaved;
 
-  InputField(this.labelText, [this.helperText = "Required"]) {}
+  InputField(
+      this.labelText,
+      Function(String) onSaved,
+      [this.helperText = "Required"]) {}
 
   Widget build() {
     return Padding(
@@ -14,7 +18,7 @@ class InputField {
         vertical: 10.0
       ),
       child: TextFormField(
-        onSaved: (str) => print("Person $str saved!"),
+        onSaved: onSaved,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           helperText: this.helperText,
